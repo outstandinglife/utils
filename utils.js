@@ -92,6 +92,7 @@ class Storage {
  *@params   {arr}   排序的数组
  *@params   {state} 排序的类型
  *@author   lipenghui
+ *@Email   felicity_live@sina.cn
  *@return   arr 排序后的数组
  **/
 function sort(arr, state = 1) {
@@ -114,6 +115,7 @@ function sort(arr, state = 1) {
 /** 获取url参数
  *@params   {url}   查询的url链接
  *@author   lipenghui
+ *@Email   felicity_live@sina.cn
  *@return   url对象
  **/
 function getUrlAllParams(url) {
@@ -136,6 +138,7 @@ function getUrlAllParams(url) {
  * @param  {str}
  * @param  {type} 
  *       type:  1:所有空格  2:前后空格  3:前空格 4:后空格
+ *@Email   felicity_live@sina.cn
  * @return {String}
  */
 function trim(str, type) {
@@ -152,4 +155,22 @@ function trim(str, type) {
         default:
             return str;
     }
+}
+
+
+
+/** 获取url链接最后一层目录
+ *@author    lipenghui
+ *@Email     felicity_live@sina.cn
+ *@return    url
+ **/
+function getUrlLast() {
+    let url = window.location.href;
+    let urlList = url.split('').reverse();
+    var str = [];
+    for (let i = 0; i < urlList.length; i++) {
+        if (urlList[i] === '/') break;
+        str.push(urlList[i]);
+    }
+    return str.reverse().join('');
 }
